@@ -7,6 +7,8 @@ def gallery(request):
     images = Image.get_all_images()
     location = Location.object.all()
     return render(request, )
+
+    
 def search_results(request):
     categories = Category.objects.all()
     location = Location.objects.all()
