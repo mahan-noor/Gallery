@@ -8,7 +8,7 @@ def gallery(request):
     location = Location.object.all()
     return render(request, )
 
-    
+
 def search_results(request):
     categories = Category.objects.all()
     location = Location.objects.all()
@@ -23,3 +23,18 @@ def search_results(request):
     else:
         message: "you have not searched for any term"
         return render(request,'search.html' ,{"message":message ,"locations":locations})
+
+
+def singlepost(request,img_id):
+    try:
+        singlepost = Image.objects.get(id = img_id)
+    except DoesNotExist:
+        raise Http404()
+    return render (request,"singlepost.html", {"singlepost": singlepost}) 
+
+def location_filter(request, location):
+    locations = Location.objects.all()
+    images = Image.objects.filter(location__id = location)
+    title = 'Location Photos'
+    return render(request, 'location.html', {'title':title, 'images':images, 'locations':locations})
+
