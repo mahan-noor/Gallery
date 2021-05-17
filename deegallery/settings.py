@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     
     "gallery.apps.GalleryConfig",
     "bootstrap3",
+    'pyuploadcare.dj',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -70,6 +71,11 @@ TEMPLATES = [
         },
     },
 ]
+
+UPLOADCARE = {
+    'pub_key': 'U5UUY_4sfCf_9:"',
+    'secret': config('SECRET'),
+}
 
 WSGI_APPLICATION = 'deegallery.wsgi.application'
 
