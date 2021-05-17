@@ -73,11 +73,6 @@ TEMPLATES = [
     },
 ]
 
-UPLOADCARE = {
-    'pub_key': 'U5UUY_4sfCf_9:"',
-    'secret': '0h7(wlt5#6^mz_rhhlynfo6ia&k0-t-4$tt3)qf9!8sarykxqz',
-}
-
 WSGI_APPLICATION = 'deegallery.wsgi.application'
 
 
