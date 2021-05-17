@@ -26,7 +26,6 @@ class Location(models.Model):
         return self.name
 
 class Image(models.Model):
-    img = ImageField(blank=True, manual_crop="")
     img_name = models.CharField(max_length= 30)
     img_description = models.TextField()
     editor = models.ForeignKey(Editor,on_delete=models.CASCADE)
