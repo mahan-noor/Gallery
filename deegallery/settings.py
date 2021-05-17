@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -74,7 +75,7 @@ TEMPLATES = [
 
 UPLOADCARE = {
     'pub_key': 'U5UUY_4sfCf_9:"',
-    'secret': config('SECRET'),
+    'secret': '0h7(wlt5#6^mz_rhhlynfo6ia&k0-t-4$tt3)qf9!8sarykxqz',
 }
 
 WSGI_APPLICATION = 'deegallery.wsgi.application'
@@ -133,6 +134,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
