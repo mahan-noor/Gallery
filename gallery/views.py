@@ -6,9 +6,8 @@ from .models import Image,Location,Category,Editor
 
 def gallery(request):
     images = Image.get_all_images()
-    category = Category.objects.all()
     locations = Location.objects.all()
-    return render(request, 'gallery.html', {"images":images, "locations":locations , "category":category})
+    return render(request, 'gallery.html', {"images":images, "locations":locations})
 
 
 
@@ -35,9 +34,9 @@ def singlepost(request,img_id):
         raise Http404()
     return render (request,"singlepost.html", {"singlepost": singlepost}) 
 
-def location_filter(request, location):
-    locations = Location.objects.all()
-    images = Image.objects.filter(location__id = location)
+def location_filter(request, location_id):
+    locations = Location.objects.get(id=location_id)
+    images = Image.search_by_location(location)
     title = 'Location Photos'
     return render(request, 'location.html', {'title':title, 'images':images, 'locations':locations})
 
