@@ -36,3 +36,20 @@ class Image(models.Model):
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
 
 
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
+    
+    @classmethod
+    def get_all_images(cls):
+        images = cls.objects.all()
+        return images
+
+    @classmethod
+    def search_by_category(cls,search):
+        images = Image.objects.filter(category__name__icontains=search)
+        return images
+
+
