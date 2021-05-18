@@ -13,13 +13,6 @@ Gallery is a photo web application to showcase millenial focused pictures. Users
   * Admin capabilities to upload images through the dashboard.
 
 
- | Behavior  /	Input / Output /
- 
- |View photos of interest |	Scroll to see a gallery and click on picture |	Displays a picture with name description and copy link for sharing |
- |Search a picture by category |	Enter the category in the search input |	Displays photographs in the searched category |
- |View pictures by location |	Click on location of interest in menu bar  |	Displays photographs of chosen location|
- | View Single picture |	Click on photo of interest then click on image |	Displays a single page with details of the picture |
-
 ## Setup/Installation Requirements
  *Here is a run through of how to set up the application:
 
