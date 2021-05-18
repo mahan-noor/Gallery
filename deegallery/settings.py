@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -35,7 +36,7 @@ INSTALLED_APPS = [
     
     "gallery.apps.GalleryConfig",
     "bootstrap3",
-    'pyuploadcare.dj',
+    "cloudinary",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+cloudinary.config( 
+  cloud_name = "ismahan", 
+  api_key = "626165648298845", 
+  api_secret = "uf8XtnXkokMs2kjn7Xl-fD0JFTY" 
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

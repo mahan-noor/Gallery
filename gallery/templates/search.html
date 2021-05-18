@@ -18,7 +18,7 @@
           <div class="portfolio-wrap ">
               <div class="portfolio-wrap hovereffect">
                   <a class="img-overlay" data-toggle="modal" data-target="#{{image.id}}" style="width:100%">
-                      <img src="{{image.img.cdn_url}}" href="" class="image" alt="Image">
+                      <img src="{{image.img.url}}" href="" class="image" alt="Image">
                       <div class="overlay">
                           <div class="text">View Image</div>
                       </div>
@@ -33,13 +33,13 @@
   <div class="modal-dialog" role="document">
       <div class="modal-content">
           <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"><strong>{{image.img_name}}</strong></h5>
+              <h5 class="modal-title" id="exampleModalLabel"><strong>{{image.img.name}}</strong></h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
               </button>
           </div>
           <div class="modal-body">
-              <img src="{{image.img.cdn_url}}" alt="" class="img-fluid">
+              <img src="{{image.img.url}}" alt="" class="img-fluid">
           </div>
           <div class="details" style="margin: 15px;">
               <p style="font-family: 'Alegreya Sans SC', sans-serif; ">Category: {{image.category}}</p>

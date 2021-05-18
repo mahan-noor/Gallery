@@ -1,15 +1,17 @@
+
 {%extends 'base.html'%}
 
 {% block content %}
 {{block.super}}
 
 
-<div class="container-fluid">
-    <div class="container header">
+<div class="container-fluid "
+    style="background-image: url(https://www2.shutterstock.com/blog/wp-content/uploads/sites/5/2017/06/DIY-Gear-Storage-Cover.jpg),linear-gradient(330deg, rgba(0, 21, 34, 0.87) 0%, rgba(52, 37, 54, 0.85) 100%); background-blend-mode: overlay; height: 452px; background-repeat:no-repeat; background-position: top; background-size: cover; background-position: center; margin-bottom: 4%; ">
+    <div class="container header" >
         <div class="logo">
             <img src="https://fontmeme.com/permalink/191110/b736c62394589483c15ed0b70f351136.png" alt="thrasher-font"
-                 style="padding: 2%;  border: 0;" class="img-fluid">
-            <h2 style="font-family: 'Alegreya Sans SC', sans-serif; color: rgb(19, 17, 17);">Gallery Aesthetics</h2>
+               style="padding: 2%;" class="img-fluid">
+            <h2 style="font-family: 'Alegreya Sans SC', sans-serif; ">Modern Aesthetics</h2>
         </div>
         <div class="form">
             <!-- Adding a search form  -->
@@ -17,7 +19,7 @@
 
 
 
-                <div class="p-1 bg-light rounded rounded-pill shadow-sm" style="background: transparent;">
+                <div class="p-1 bg-light rounded rounded-pill shadow-sm">
                     <div class="input-group">
                         <input type="text" placeholder="Search Image by Category" aria-describedby="button-addon1"
                             class="form-control border-0 rounded rounded-pill bg-light" name="image">
@@ -33,14 +35,14 @@
             <!-- search form end -->
         </div>
         <div class="trending-searches">
-            <p style="color: #264d88; padding: 2px; font-size: 20px; ">Trending Searches: adventure, Drip</p>
+            <p style="color: #d7e5fa; padding: 2px; font-size: smaller;">Trending Searches: Tropics, Drip</p>
         </div>
     </div>
 
     <div style="margin-top: 120px;" class="container-fluid">
         <hr class="style-one">
         {%for location in locations%}
-        <a href="/location/{{location.id}}" class="btn btn-outline-info btn-sm rounded rounded-pill"
+        <a href="{%url 'location' location.id%}" class="btn btn-outline-info btn-sm rounded rounded-pill"
             style="margin: 3px;">{{location.location_name}}</a>
         {%endfor%}
 
@@ -94,11 +96,19 @@
         </div>
         {% empty %}
     </div>
+
+
     <div class="row">
         <h2 class="text-center">Images Unavailable</h2>
     </div>
     {% endfor %}
 
     <!-- Image details modal -->
+
+
+
 </div>
+
+
+
 {% endblock %}

@@ -1,5 +1,5 @@
 .navbar {
-    background-color: rgb(0, 0, 0);
+    background-color: transparent;
     text-align: left;
  
     
@@ -46,6 +46,11 @@
     margin-bottom: 4%; 
     background-blend-mode: overlay; 
     width: 80%;
+  }
+  .logo{
+    background-image: url("https://fontmeme.com/permalink/191110/b736c62394589483c15ed0b70f351136.png" );
+    padding: 2%;
+    border: 0;
   }
 
   .form {
@@ -95,17 +100,19 @@
     margin-top: 3em;
   }
   
-  .image {
-    object-fit: cover;
-    object-position: 100% 0;
-  
-    width: 320px;
-    height: 180px;
+  .image{
+    max-width: 650px;
+    width: 80%;
+    height: auto;
+    display: flex;
   }
+ 
+  
+
   
   .head-content {
     color: #44c7f4;
-    font-size: 20px;
+    font-size: 50px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 7px;
