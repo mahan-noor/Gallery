@@ -14,7 +14,7 @@ def gallery(request):
 
 def search_results(request):
     categories = Category.objects.all()
-    location = Location.objects.all()
+    locations = Location.objects.all()
     if 'image' in request.GET and request.GET['image']:
         image_category = request.GET.get('image')
         searched_images = Image.search_by_category

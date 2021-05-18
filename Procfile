@@ -1,0 +1,1 @@
+web: gunicorn deegallery.wsgi --log-file -
