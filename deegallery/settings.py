@@ -23,7 +23,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
