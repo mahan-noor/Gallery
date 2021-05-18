@@ -99,14 +99,13 @@ WSGI_APPLICATION = 'deegallery.wsgi.application'
 if config('MODE')=="dev":
    DATABASES = {
        'default': {
-           'ENGINE': 'django.db.backends.postgresql',
-           'NAME': 'gallery',
-           'USER':'lenovo',
-           'PASSWORD':'1234',
+           'ENGINE': 'django.db.backends.postgresql_psycopg2',
+           'NAME': config('gallery'),
+           'USER': config('lenovo'),
+           'PASSWORD': config('1234'),
            'HOST': config('DB_HOST'),
            'PORT': '',
        }
-       
    }
 # production
 else:
