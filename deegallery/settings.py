@@ -100,9 +100,9 @@ if config('MODE')=="dev":
    DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.postgresql',
-           'NAME': config('gallery'),
-           'USER': config('lenovo'),
-           'PASSWORD': config('1234'),
+           'NAME': 'gallery',
+           'USER':'lenovo',
+           'PASSWORD':'1234',
            'HOST': config('DB_HOST'),
            'PORT': '',
        }
