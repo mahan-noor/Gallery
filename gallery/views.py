@@ -13,15 +13,16 @@ def gallery(request):
 
 
 def search_results(request):
-    categories = Category.objects.all()
-    locations = Location.objects.all()
-    if 'image' in request.GET and request.GET['image']:
-        image_category = request.GET.get('image')
-        searched_images = Image.search_by_category
+    
+    if 'category' in request.GET and request.GET['category']:
+        search_term = request.GET.get('category')
+        category = Category.objects.get(name=search_term)
+        searched_images = Image.search_by_category(category)
+        
 
-        message = f"{image_category}"
+        message = f"{category}"
 
-        return render(request, 'search.html', {"message":message , "images": searched_images, "categories": categories, "locations":locations})
+        return render(request, 'search.html', {"message":message , "images": searched_images})
 
     else:
         message: "you have not searched for any term"

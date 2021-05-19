@@ -6,7 +6,7 @@
     background-image: url(https://images.unsplash.com/photo-1487523611061-10d47c165f4c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTl8fGNhbWVyYXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60),
       linear-gradient(
         330deg,
-        rgba(70, 95, 110, 0.87) 0%,
+        rgba(66, 86, 100, 0.87) 0%,
         rgba(44, 32, 46, 0.85) 100%
       );
     background-blend-mode: overlay;
@@ -41,7 +41,7 @@
               placeholder="Search Image by Category"
               aria-describedby="button-addon1"
               class="form-control border-0 rounded rounded-pill bg-light"
-              name="image"
+              name="category"
             />
             <div class="input-group-append">
               <button
@@ -72,7 +72,7 @@
       href="{%url 'location' location.id%}"
       class="btn btn-outline-info btn-sm rounded rounded-pill"
       style="margin: 3px"
-      >{{location.location_name}}</a
+      >{{location.name}}</a
     >
     {%endfor%}
   </div>
@@ -92,15 +92,12 @@
             data-target="#{{image.id}}"
             style="width: 100%"
           >
-            <img
+            <a href="/singlepost/{{image.id}}"><img
               src="{{image.img.url}}"
               href=""
-              class="image"
-              alt="Image"
-            />
-            <div class="overlay">
-              <div class="text">View Image</div>
-            </div>
+              class="image" id="single"
+              alt="Image" 
+            /></a>         
           </a>
         </div>
       </div>
@@ -132,14 +129,7 @@
           <div class="modal-body">
             <img src="{{image.img.url}}" alt="" class="img-fluid" />
           </div>
-          <div class="details" style="margin: 15px">
-            <p style="font-family: 'Alegreya Sans SC', sans-serif">
-              Category: {{image.category}}
-            </p>
-            <p style="font-family: 'Alegreya Sans SC', sans-serif">
-              Location: {{image.location}}
-            </p>
-          </div>
+         
           <div class="modal-footer">
             <button
               type="button"
