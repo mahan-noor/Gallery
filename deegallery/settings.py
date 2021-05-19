@@ -40,7 +40,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 INSTALLED_APPS = [
     
     "gallery.apps.GalleryConfig",
-    "bootstrap3",
+    "bootstrap4",
     "cloudinary",
     'django.contrib.admin',
     'django.contrib.auth',

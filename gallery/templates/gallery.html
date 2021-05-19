@@ -1,19 +1,46 @@
-{%extends 'base.html'%} {% block content %} 
-{% load bootstrap3 %}
-{{block.super}}
+{%extends 'base.html'%} {% block content %} {{block.super}}
 
-<div class="container-fluid">
+<div
+  class="container-fluid"
+  style="
+    background-image: url(https://images.unsplash.com/photo-1487523611061-10d47c165f4c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTl8fGNhbWVyYXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60),
+      linear-gradient(
+        330deg,
+        rgba(70, 95, 110, 0.87) 0%,
+        rgba(44, 32, 46, 0.85) 100%
+      );
+    background-blend-mode: overlay;
+    height: 452px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 4%;
+  "
+>
   <div class="container header">
-    <div class="">
+    <div class="logo">
+      <img
+        src="https://fontmeme.com/permalink/191110/b736c62394589483c15ed0b70f351136.png"
+        alt="thrasher-font"
+        border="0"
+        style="padding: 2%"
+        class="img-fluid"
+      />
+      <h2 style="font-family: 'Alegreya Sans SC', sans-serif; color: rgb(247, 233, 233)">
+        Modern Striking
+      </h2>
+    </div>
+    <div class="form">
       <!-- Adding a search form  -->
-      <form class="pt-5 mt-5" role="search" action="{% url 'search_results' %}">
-        <div class="">
-          <div class="input-group" >
+      <form class="" role="search" action="{% url 'search_results' %}">
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm">
+          <div class="input-group">
             <input
               type="text"
               placeholder="Search Image by Category"
               aria-describedby="button-addon1"
-              class="form-control enlarge"
+              class="form-control border-0 rounded rounded-pill bg-light"
               name="image"
             />
             <div class="input-group-append">
@@ -31,20 +58,24 @@
 
       <!-- search form end -->
     </div>
+    <div class="trending-searches">
+      <p style="color: #d7e5fa; padding: 2px; font-size: smaller">
+        Trending Searches
+      </p>
+    </div>
   </div>
-  <div class="loca"    style="margin-top: 120px;">
+
+  <div style="margin-top: 120px" class="container-fluid">
+    <hr class="style-one" />
     {%for location in locations%}
     <a
       href="{%url 'location' location.id%}"
-      class="btn btn-outline-info btn-"
-      style="margin: 50px; "
+      class="btn btn-outline-info btn-sm rounded rounded-pill"
+      style="margin: 3px"
       >{{location.location_name}}</a
     >
     {%endfor%}
-
-
   </div>
-  
 </div>
 
 <div class="container">
@@ -61,7 +92,12 @@
             data-target="#{{image.id}}"
             style="width: 100%"
           >
-            <img src="{{image.img.url}}" href="" class="image" alt="Image" />
+            <img
+              src="{{image.img.url}}"
+              href=""
+              class="image"
+              alt="Image"
+            />
             <div class="overlay">
               <div class="text">View Image</div>
             </div>
